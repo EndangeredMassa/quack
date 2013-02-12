@@ -1,0 +1,16 @@
+{
+  "name": "duck",
+  "version": "0.0.0",
+  "description": "A simple BDD testing framework.",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --compilers coffee:coffee-script test.coffee"
+  },
+  "repository": "",
+  "author": "",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "mocha": "~1.8.1",
+    "coffee-script": "~1.4.0"
+  }
+}
