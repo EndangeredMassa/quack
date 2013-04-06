@@ -1,4 +1,4 @@
-## duck
+## quack
 
 A simple BDD testing framework. There are no spy, stub, or assertion methods provided.
 
