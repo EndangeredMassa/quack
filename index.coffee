@@ -12,6 +12,9 @@ module.exports = class Quack
     @runTests()
     callback(@results)
 
+  describe: (description, method) ->
+    method()
+
   it: (description, method) ->
     @tests.push({description, method})
 
