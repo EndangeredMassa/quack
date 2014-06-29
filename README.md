@@ -14,3 +14,7 @@ The goal is to be the simplest testing framework possible that allows you to (1)
 - 0 tests == suite failure
 - proper exit codes
 - 0 asserts in a test == test failure
+
+# license
+
+[MIT](LICENSE)
