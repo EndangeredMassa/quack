@@ -1,5 +1,5 @@
 {
-  "name": "duck",
+  "name": "quack",
   "version": "0.0.0",
   "description": "A simple BDD testing framework.",
   "scripts": {
