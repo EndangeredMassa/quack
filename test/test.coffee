@@ -1,5 +1,5 @@
 {ok:expect, equal} = require 'assert'
-Quack = require './index'
+Quack = require '../src/index'
 
 # We're using mocha to test our test framework.
 # Any global describe/it methods are from mocha.

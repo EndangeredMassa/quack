@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A simple BDD testing framework.",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --compilers coffee:coffee-script/register test.coffee"
+    "test": "./node_modules/.bin/mocha --compilers coffee:coffee-script/register test"
   },
   "repository": "",
   "author": "",
