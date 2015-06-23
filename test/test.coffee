@@ -48,9 +48,53 @@ describe 'quack engine', ->
       equal results.failed, 0, 'failed'
       equal results.status, 'pass', 'status'
 
-  it 'supports beforeEach'
-  it 'supports afterEach'
+  it 'supports beforeEach', ->
+    duck = new Quack
+    beforeEachCalled = false
+    duck.describe 'describe block', ->
+      duck.beforeEach ->
+        beforeEachCalled = true
+      duck.it 'test', ->
+        expect beforeEachCalled
+
+    duck.run (results) ->
+      equal results.total, 1, 'total'
+      equal results.passed, 1, 'passed'
+      equal results.failed, 0, 'failed'
+      equal results.status, 'pass', 'status'
+
+  it 'supports afterEach', ->
+    duck = new Quack
+    afterEachCalled = false
+    duck.describe 'describe block', ->
+      duck.afterEach ->
+        afterEachCalled = true
+      duck.it 'test', ->
+        equal afterEachCalled, false
+      duck.it 'second test', ->
+        equal afterEachCalled, true
+
+    duck.run (results) ->
+      equal results.total, 2, 'total'
+      equal results.passed, 2, 'passed'
+      equal results.failed, 0, 'failed'
+      equal results.status, 'pass', 'status'
+
+  it 'maintains a relevant test context', ->
+    duck = new Quack
+    duck.describe 'describe block', ->
+      duck.beforeEach ->
+        @beforeEachCalled = true
+      duck.it 'test', ->
+        expect @beforeEachCalled
+
+    duck.run (results) ->
+      equal results.total, 1, 'total'
+      equal results.passed, 1, 'passed'
+      equal results.failed, 0, 'failed'
+      equal results.status, 'pass', 'status'
+
+  it 'supports nesting'
   it 'supports after (current test)'
   it 'supports async tests with `done`'
-  it 'maintains a relevant test context'
 
